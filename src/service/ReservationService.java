@@ -51,12 +51,12 @@ public class ReservationService {
 
     public Collection<IRoom> findRooms(Date checkInDate,Date checkOutDate) {
         Set<Reservation> ReservationSet = new HashSet<>(mapReservation.values());
-        if (mapReservation.size()==0) {
+        if (rooms.size()!=0&&mapReservation.size()==0) {
             // if there is no reservation in the reservation map ,then all the rooms in the room set are available
            availableRoom= rooms;
 
         }else if (rooms.size()==0){
-            System.out.println("Currently there is no available room ");
+            System.out.println("Currently there is no  room in the system ");
 
 
         }else {
