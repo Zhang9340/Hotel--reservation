@@ -3,7 +3,7 @@ import model.Customer;
 import java.util.*;
 
 public class CustomerService {
-    Collection< Customer> customerList= new HashSet<Customer>();
+    Collection< Customer> customerList= new HashSet<Customer>(); // This set store Customer information
     private static CustomerService customerService;
     private CustomerService() {}
     public static CustomerService getInstance() {
@@ -27,7 +27,16 @@ public class CustomerService {
         return null;
     }
     public Collection<Customer> getAllCustomers(){
+       if (customerList.size()==0){
+           System.out.println("There is no customer in the system ");
 
+       }else {
+           System.out.println("Customers in the system: ");
+           for (Customer customer: customerList){
+            System.out.println(customer);
+        }
+
+       }
         return customerList;
     }
 }

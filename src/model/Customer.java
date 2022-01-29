@@ -11,7 +11,7 @@ public class Customer {
         String emailRegex = "^(.+)@(.+)\\.(.+)$";
         Pattern pattern = Pattern.compile(emailRegex);
         if (!pattern.matcher(email).matches()){
-            throw (new IllegalArgumentException("Invalid email address, please try again."));
+            throw (new IllegalArgumentException("Invalid email address, please enter the email in correct format:"));
         }
 
 
@@ -48,6 +48,6 @@ public class Customer {
 
     @Override
     public String toString(){
-        return "The name of the user: "+ firstName+" "+lastName+"\n"+"Email address: "+email+"\n";
+        return "Customer's name: "+ firstName+" "+lastName+" Email address: "+email+"\n";
     }
 }

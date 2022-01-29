@@ -33,10 +33,15 @@ public class AdminResource {
 
     }
     public Collection<IRoom> getAllRooms(){
+
+
+        reservationService.getAllRoom();
+
         return reservationService.rooms;
 
     }
     public Collection<Customer> getAllCustomer(){
+
         return customerservice.getAllCustomers();
 
     }

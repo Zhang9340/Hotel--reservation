@@ -47,7 +47,7 @@ public class Reservation {
     }
     @Override
     public String toString(){
-        return "Customer detail: "+customer +"\n"+"Check in date: "+checkInDate+
+        return "Customer detail: "+customer +"\n"+" Check in date: "+checkInDate+
                 " "+"Check out date: "+checkOutDate+" Room Type:"+ room;
     }
 }
