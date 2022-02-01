@@ -19,6 +19,27 @@ public class Customer {
         this.firstName=firstName;
         this.lastName=lastName;
     }
+    @Override
+    public int hashCode(){
+        int hash = 7;
+        hash = 31 * hash +  (firstName == null ? 0 :firstName.hashCode());
+        hash = 31 * hash + (lastName == null ? 0 : lastName.hashCode());
+        hash = 31 * hash + (email== null ? 0 : email.hashCode());
+        return hash;
+
+    }
+    @Override
+    public  boolean equals(final Object o){
+        if (this==o){return true;}
+        if (o==null){return false;}
+        if(getClass()!=o.getClass()){return false;}
+        Customer customer =(Customer) o;
+        return email.equals(customer.email)&&firstName.equals(customer.firstName)
+                &&lastName.equals(customer.lastName);
+
+
+    }
+
 
     public void setEmail(String email) {
         this.email = email;
@@ -48,6 +69,6 @@ public class Customer {
 
     @Override
     public String toString(){
-        return "Customer's name: "+ firstName+" "+lastName+" Email address: "+email+"\n";
+        return "Customer's name: "+ firstName+" "+lastName+"," +"    Email address: "+email+"\n";
     }
 }

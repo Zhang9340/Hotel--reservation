@@ -13,6 +13,34 @@ public class Reservation {
         this.room=room;
         this.customer=customer;
     }
+    @Override
+    public int hashCode(){
+        int hash = 7;
+        hash = 31 * hash +  (customer == null ? 0 :customer.hashCode());
+        hash = 31 * hash + (room == null ? 0 : room.hashCode());
+        hash = 31 * hash + (checkInDate== null ? 0 : checkInDate.hashCode());
+        hash=  31*hash + (checkOutDate== null? 0: checkOutDate.hashCode());
+        return hash;
+    }
+    @Override
+    public boolean equals(final Object o){
+        //If the object is compared with itself then return true
+        if (this==o){return true;}
+
+        if (o==null){return false;}
+        if(getClass()!=o.getClass()){return false;}
+
+        // typecast o to Complex so that we can compare data members
+        Reservation reservation=(Reservation) o;
+        return customer.equals(reservation.customer)
+                &&room.equals(reservation.room)&&checkInDate.equals(reservation.checkInDate)
+                &&checkOutDate.equals(reservation.checkOutDate);
+
+
+
+
+    }
+
 
     public Customer getCustomer() {
         return customer;
@@ -26,7 +54,7 @@ public class Reservation {
         return checkOutDate;
     }
 
-    public IRoom getRoom() {
+    public  IRoom getRoom() {
         return room;
     }
 
@@ -47,7 +75,7 @@ public class Reservation {
     }
     @Override
     public String toString(){
-        return "Customer detail: "+customer +"\n"+" Check in date: "+checkInDate+
+        return "Customer detail: "+customer +"\n"+"Check in date: "+checkInDate+
                 " "+"Check out date: "+checkOutDate+" Room Type:"+ room;
     }
 }

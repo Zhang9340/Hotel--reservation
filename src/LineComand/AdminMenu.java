@@ -115,8 +115,8 @@ public class AdminMenu {
                                     } catch (InputMismatchException ex) {
                                         scanner.nextLine();
                                         roomType = null;
+                                        System.out.println("Invalid input! Please enter 1 or 2 ");
                                         isValidType = false;
-                                        System.out.println("Invalid input! Please enter correct format.");
 
                                     }
                                 } while (!isValidType);
